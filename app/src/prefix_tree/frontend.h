@@ -150,10 +150,10 @@ namespace scitt
       auto tree = index->prepare_flush();
 
       // It's possible for a flush to have been written to the KV, with an
-      // upper bound sequence number that has not yet been indexed yet. This
+      // upper bound sequence number that has not been indexed yet. This
       // happens for example during a leader election, where the old leader may
       // have flushed the prefix tree, written the tree info to the KV and
-      // replicated these changes to followers. The new follower would see the
+      // replicated these changes to followers. The new leader would see the
       // up-to-date KV, but its indexer may still be lagging behind the last
       // flush.
       //
