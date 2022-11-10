@@ -10,7 +10,7 @@ NUM_USERS=${NUM_USERS:-100}
 SPAWN_RATE=${SPAWN_RATE:-10} # per second
 
 if [ ! -f "venv/bin/activate" ]; then
-    python3.8 -m venv "venv"
+    python3.10 -m venv "venv"
 fi
 source venv/bin/activate
 pip install --disable-pip-version-check -q -r test/requirements.txt
